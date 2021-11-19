@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: openshift-training-nestjs-one
     team: ibm-training
@@ -16,6 +15,7 @@ spec:
     metadata:
       labels:
         app: openshift-training-nestjs-one
+        team: ibm-training
     spec:
       containers:
       - image: quay.io/linxianer12/openshift-training-nestjs:1.0.0
