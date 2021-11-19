@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: openshift-training-nestjs-one
+    team: ibm-training
+  name: openshift-training-nestjs-one
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openshift-training-nestjs-one
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: openshift-training-nestjs-one
+    spec:
+      containers:
+      - image: quay.io/linxianer12/openshift-training-nestjs:1.0.0
+        name: openshift-training-nestjs
+        resources: {}
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          failureThreshold: 2
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          failureThreshold: 2
