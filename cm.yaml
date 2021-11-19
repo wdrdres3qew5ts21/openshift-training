@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: product-one
+data:
+  DISPLAY_MESSAGE: IBM Client Engineering
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: product-two
+data:
+  DISPLAY_MESSAGE: BRED-IT

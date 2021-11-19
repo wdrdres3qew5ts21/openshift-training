@@ -12,4 +12,34 @@ spec:
     targetPort: 8080
   selector:
     team: ibm-training
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: openshift-training-nestjs-one
+    team: ibm-training
+  name: openshift-training-nestjs-one
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: openshift-training-nestjs-one
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: openshift-training-nestjs-two
+    team: ibm-training
+  name: openshift-training-nestjs-two
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: openshift-training-nestjs-two
 

@@ -19,6 +19,12 @@ spec:
     spec:
       containers:
       - image: quay.io/linxianer12/openshift-training-nestjs:1.0.0
+        env:
+        - name: DISPLAY_MESSAGE
+          valueFrom:
+            configMapKeyRef:
+              name: product-two
+              key: DISPLAY_MESSAGE
         name: openshift-training-nestjs
         resources: {}
         readinessProbe:
